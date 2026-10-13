@@ -10,9 +10,14 @@ parser.add_argument("--add", type=str, metavar ='', help="Input name of new task
 parser.add_argument("--desc", type=str, default="No description provided", metavar='', help="Description of task")
 parser.add_argument(
     "--status", choices=["todo", "in-progress", "completed"], default="todo", metavar ='',
-    help="Current status of task \n Options: ['todo', 'in-progress', 'completed']"
+    help="Current status of task. \n Options: ['todo', 'in-progress', 'completed']"
     )
-parser.add_argument("--view", default=False, action="store_true", help="Provides a list of current tasks")
+parser.add_argument(
+    "--view", choices=["todo", "in-progress", "completed", "None"], nargs="?", const="None", 
+    metavar='STATUS', help="Provides a list of current tasks based on their status, or all tasks if no argument is given"
+    )
+    #'nargs="?"' allows --view to be placed with either 0 or 1 positional arguments
+    #If there are no positional arguments following --view then the const value is placed ("None")
 parser.add_argument("--update", type=str, metavar='', help="Update the status of an existing task")
 #I added the metavar='' to each of the arguments to make the [-h] and [--help] tags print prettier
 
@@ -22,11 +27,12 @@ save_data = "data.json"
 
 if args.view:
 
-    view(save_data)
+    view(save_data, args)
 
 if args.add:
 
     add(save_data, args)
 
 if args.update:
+
     update(save_data, args)
