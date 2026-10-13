@@ -13,23 +13,23 @@ A simple CLI tool that stores a task and its status in a list.
 
 ## Usage
 
-# Add new task
+### Add new task
 
 `python3 main.py --add "Example Task" --desc "This is an example." --status "in-progress"`
 
-# Modify existing task
+### Modify existing task
 
 `python3 main.py --update "Example Task" --status "completed"`
 
-# View all tasks
+### View all tasks
 
 `python3 main.py --view`
 
-# View in-progress tasks
+### View in-progress tasks
 
 `python3 main.py --view "in-progress"`
 
-# Delete an existing task
+### Delete an existing task
 
 `python3 main.py --delete "Example Task"`
 
