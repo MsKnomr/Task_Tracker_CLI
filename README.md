@@ -40,6 +40,8 @@ A simple CLI tool that stores a task and its status in a list.
 | `--add` | Add a new task to the list | required |
 | `--status` | **Requires `--add`**; Task status (`todo` / `in-progress` / `completed`) | todo |
 | `--desc` | **Requires `--add`**; Task description | "No description provided" |
-| `--update` NAME_OR_ID | **Requires `--status` or `--desc`** Update an existing task | required |
+| `--update` NAME_OR_ID | **Requires `--status` or `--desc`**; Update an existing task | required |
 | `--delete` NAME_OR_ID | Delete an existing task | required |
 | `--refresh` | Refresh all task IDs | false |
+
+Project Idea provided by: https://roadmap.sh/projects/task-tracker
