@@ -11,8 +11,7 @@ def add(save_data, args):
         with open(save_data, "r+") as file:
             tasks = json.load(file)
             #Loads the stored list into a new variable
-            for task in tasks:
-                id += 1
+            id = tasks[len(tasks) - 1]["id"] + 1
             new_task["task name"] = args.add
             new_task["id"] = id
             new_task["status"] = args.status

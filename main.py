@@ -2,6 +2,7 @@ import argparse
 from view import view
 from add import add
 from update import update
+from delete import delete
 
 parser = argparse.ArgumentParser(description="Task_Tracker")
 
@@ -19,6 +20,8 @@ parser.add_argument(
     #'nargs="?"' allows --view to be placed with either 0 or 1 positional arguments
     #If there are no positional arguments following --view then the const value is placed ("None")
 parser.add_argument("--update", type=str, metavar='', help="Update the status of an existing task")
+parser.add_argument("--delete", type=str, metavar='', help="Delete a task from the list")
+
 #I added the metavar='' to each of the arguments to make the [-h] and [--help] tags print prettier
 
 args = parser.parse_args()
@@ -36,3 +39,6 @@ if args.add:
 if args.update:
 
     update(save_data, args)
+
+if args.delete:
+    delete(save_data, args)
